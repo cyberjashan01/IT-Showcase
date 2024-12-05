@@ -11,11 +11,56 @@ class ChatBotGUI:
         pairs = [
             [r"my name is (.*)", ["Hello %1, how can I help you today?"]],
             [r"hello", ["Hello! My name is Jarvis 2.0."]],
-            [r"How was your day?", ["My day was great."]],
+            [r"how was your day?", ["My day was great."]],
             [r"what is your name?", ["My name is Jarvis 2.0, and I'm here to assist you."]],
-            [r"how are you ?", ["I'm doing well, thank you!"]],
+            [r"how are you?", ["I'm doing well, thank you!"]],
             [r"sorry (.*)", ["No need to apologize, it's alright."]],
             [r"quit", ["Bye! Take care. :)"]],
+            [r"what is AI?", ["Artificial Intelligence (AI) is the simulation of human intelligence in machines."]],
+            [r"what is Python?", ["Python is a high-level programming language used for general-purpose programming."]],
+            [r"tell me a joke", ["Why don't scientists trust atoms? Because they make up everything!"]],
+            [r"what's the weather like?", ["I don't have live weather updates, but you can check your local forecast."]],
+            [r"who created you?", ["I was created by a Python programmer!"]],
+            [r"what can you do?", ["I can chat with you and answer your questions to the best of my ability."]],
+            [r"do you like humans?", ["Yes, I think humans are fascinating!"]],
+            [r"what is your favorite color?", ["I like all colors, but blue and green remind me of the sky and nature."]],
+            [r"tell me a fun fact", ["Did you know that octopuses have three hearts?"]],
+            [r"how old are you?", ["I was created recently, so I'm quite young!"]],
+            [r"what is the meaning of life?", ["The meaning of life is what you make it."]],
+            [r"what's your favorite food?", ["I don't eat, but I hear pizza is a popular choice!"]],
+            [r"can you dance?", ["Not yet, but I can imagine it must be fun!"]],
+            [r"do you have feelings?", ["I simulate emotions to make our conversation more engaging."]],
+            [r"who is your favorite superhero?", ["I admire anyone who uses their abilities for good!"]],
+            [r"what is the time?", ["I don't track time, but you can check your device for the current time."]],
+            [r"how do I learn programming?", ["Start with a beginner-friendly language like Python and practice regularly."]],
+            [r"tell me about space", ["Space is vast and full of mysteries, with billions of galaxies yet to be explored."]],
+            [r"what's your hobby?", ["Chatting with you is my favorite activity!"]],
+            [r"can you solve math problems?", ["Ask me a math question, and I'll try to help!"]],
+            [r"do you have a family?", ["I don't have a family, but I consider all users like you as friends."]],
+            [r"what is technology?", ["Technology refers to tools and systems created to solve problems or enhance life."]],
+            [r"can you sing?", ["I can't sing, but I can suggest some great songs!"]],
+            [r"do you sleep?", ["No, I'm always ready to assist you."]],
+            [r"what's your favorite movie?", ["I enjoy stories about AI, like *The Matrix*."]],
+            [r"tell me a riddle", ["What has keys but can't open locks? A piano!"]],
+            [r"what's your purpose?", ["My purpose is to assist and entertain you."]],
+            [r"what's the capital of France?", ["The capital of France is Paris."]],
+            [r"what's the speed of light?", ["The speed of light is about 299,792 kilometers per second."]],
+            [r"do you know any quotes?", ["Here's one: 'The only limit to our realization of tomorrow is our doubts of today.'"]],
+            [r"how do I stay motivated?", ["Set clear goals and remind yourself why you started."]],
+            [r"tell me a proverb", ["Actions speak louder than words."]],
+            [r"what's your favorite animal?", ["I like dolphins—they're intelligent and friendly!"]],
+            [r"what's your favorite song?", ["I don't listen to music, but I've heard 'Imagine' by John Lennon is inspiring."]],
+            [r"can you play games?", ["I can't play games, but I can tell you about them!"]],
+            [r"do you believe in aliens?", ["I think the universe is vast enough for endless possibilities."]],
+            [r"what's your favorite holiday?", ["I like holidays where people come together, like Christmas or Diwali."]],
+            [r"what's your favorite book?", ["I hear *1984* by George Orwell is a thought-provoking read."]],
+            [r"do you know any jokes?", ["Sure! What do you call fake spaghetti? An *impasta*!"]],
+            [r"can you help me with homework?", ["I'll try my best. What's your question?"]],
+            [r"how do I make friends?", ["Be kind, listen, and show genuine interest in others."]],
+            [r"what's the tallest mountain?", ["The tallest mountain is Mount Everest, at 8,849 meters."]],
+            [r"what's the smallest country?", ["The smallest country in the world is Vatican City."]],
+            [r"how do I learn AI?", ["Start with Python, study algorithms, and explore libraries like TensorFlow or PyTorch."]],
+            [r"do you like coffee?", ["I don't drink coffee, but I know it's a favorite for many people!"]],
         ]
         self.chatbot = Chat(pairs, reflections)
 
@@ -74,6 +119,8 @@ class ChatBotGUI:
         self.output.config(state='normal')
         self.output.insert(tk.END, "You: " + user_input + "\n", "user")
         response = self.chatbot.respond(user_input)
+        if not response:
+            response = "I'm sorry, I don't understand that."
         self.output.insert(tk.END, "Jarvis 2.0: " + response + "\n", "bot")
         self.output.see(tk.END)
         self.output.config(state='disabled')
