@@ -24,6 +24,6 @@ Chatbot
 App Development			
 1	Vidaan Gupta	8D	School Directory
 2	Reet Gogia	8B	School Directory
-3	Anmoldeep Kaur	9A	School Directory
+3	Achintaya	8C	School Directory
 4	Shanaya Sharma	8B	School Directory
 			
